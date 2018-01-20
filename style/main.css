@@ -1,0 +1,255 @@
+/*------------------------------------------------------------------------------------------fonts*/
+@font-face {
+	font-family: ComfortaaLight;
+	src: url("../font/Comfortaa-Light.ttf");
+}
+/*------------------------------------------------------------------------------------------animation*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/*------------------------------------------------------------------------------------------background*/
+body{
+  margin: 0;
+  max-height: 3112px;
+  font-family: ;
+  font-size: ;
+}
+.menuline{
+  width: 100%;
+  height: 45px;
+  background-color: rgb(219,53,52);
+}
+.background{
+  position: relative;
+  width: 100%;
+  animation: fadeIn 1s;
+}
+.top{
+  height: 467px;
+  background-image: url(../img/background1.png);
+  box-shadow: inset 0px 5px 15px -5px black;
+  z-index: 2;
+}
+.middle{
+  height: 2300px;
+  background-image: url(../img/background2.png);
+  top: -5px;
+  z-index: 1;
+}
+.bottom{
+  height: 317px;
+  background-image: url(../img/background3.png);
+  top: -10px;
+  z-index: 2;
+}
+.footerline{
+  position: relative;
+  width: 100%;
+  height: 45px;
+  top: 222px;
+  background-image: url(../img/footerline.png);
+}
+/*------------------------------------------------------------------------------------------page*/
+#page{
+  position: absolute;
+  left: 20%;
+  width: 60%;
+  /*background-color: #ffffff6b;*/
+  height: 3112px;
+  z-index: 3;
+  animation: fadeIn 1s;
+}
+/*-------------------------------------*/
+.menu{
+  width: 32px;
+}
+.menu img {
+  margin-top: 11px;
+  padding-bottom: 13px;
+}
+.dropmenu::before {
+  position: absolute;
+  top: -13px;
+  left: 5px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 13px 10px;
+  border-color: transparent transparent #000000b8 transparent;
+}
+.dropmenu {
+  display: none;
+  position: absolute;
+  margin-top: 7px;
+  width: 200px;
+  height: 220px;
+  background-color: #000000b8;
+  color: white;
+}
+.dropmenu ul {
+  margin: 0;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.dropmenu li {
+  list-style-type: none;
+}
+.dropmenu li:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.menu:hover .dropmenu {
+  display: flex;
+  animation: fadeIn .3s;
+}
+/*-------------------------------------*/
+.header-block{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 135px;
+  margin-top: 35px;
+ /* background-color: #00008047;*/
+}
+/*-------------------------------------*/
+.workbackground{
+  /*background-color: tomato;*/
+}
+/*-------------------------------------*/
+.registration-block{
+  height: 100%;
+  width: 200px;
+}
+.registration-block p {
+  margin-top: 0;
+  margin-bottom: 2px;
+  color: white;
+  cursor: pointer;
+}
+.registration-block span {
+  font-size: 13px;
+  text-decoration: underline;
+}
+.social{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.social img{
+  transition: .3s;
+}
+.social img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: .3s;
+}
+.basket {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px 0 black;
+  width: 100%;
+  height: 67px;
+  margin-top: 5px;
+  background-color: rgb(212,51,50);
+}
+/*-------------------------------------*/
+.logo-block{
+  height: 100%;
+  width: 200px;
+}
+.logo-block img {
+  display: block;
+  margin: 0 auto;
+}
+.logo-block span {
+  display: block;
+  margin: 0 auto;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: -1px -1px #000,
+               0 1px 0 #444;
+  color: #222;
+  transition: all 1s;
+}
+/*-------------------------------------*/
+.phone-block{
+  height: 100%;
+  width: 200px;
+}
+.phone-block p {
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-size: 19px;
+}
+.phone-block p span {
+  font-weight: bold;
+  font-size: 25px;
+}
+.phone-block div{
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px 0 black;
+  width: 100%;
+  height: 67px;
+  margin-top: 5px;
+  background-color: rgb(212,51,50);
+}
+.phone-block div p {
+  font-weight: bold;
+  font-size: 30px;
+}
+.phone-block div span {
+  display: block;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  font-size: 22px;
+}
+/*-------------------------------------*/
+.doors-block{
+  width: 100%;
+  height: 365px;
+  margin-top: 65px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+/*  background-color: #00008047;*/
+}
+.doors-block div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.doors-block div span{
+  text-align: center;
+  color: rgba(93,131,45,0.9);
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.9);
+}
+.door {
+  font-size: 40px;
+}
+.doorinfo {
+  font-size: 14px;
+}
+/*------------------------------------------------------------------------------------------footer*/
+
