@@ -1,7 +1,27 @@
 /*------------------------------------------------------------------------------------------fonts*/
 @font-face {
-	font-family: ComfortaaLight;
-	src: url("../font/Comfortaa-Light.ttf");
+	font-family: HelveticaLight;
+	src: url("../font/HelveticaNeueCyr-Light.otf");
+}
+@font-face {
+  font-family: HelveticaMedium;
+  src: url("../font/HelveticaNeueCyr-Medium.otf");
+}
+@font-face {
+  font-family: HelveticaRegular;
+  src: url("../font/HelveticaNeueCyr-Roman.otf");
+}
+@font-face {
+  font-family: HelveticaMediumItalic;
+  src: url("../font/HelveticaNeueCyr-MediumItalic.otf");
+}
+@font-face {
+  font-family: HelveticaBold;
+  src: url("../font/HelveticaNeueCyr-Bold.otf");
+}
+@font-face {
+  font-family: BebasBold;
+  src: url("../font/BebasNeue Bold.otf");
 }
 /*------------------------------------------------------------------------------------------animation*/
 @keyframes fadeIn {
@@ -23,9 +43,7 @@
 /*------------------------------------------------------------------------------------------background*/
 body{
   margin: 0;
-  max-height: 2489px;
-  font-family: ;
-  font-size: ;
+  max-height: 2440px;
 }
 .menuline{
   display: flex;
@@ -47,8 +65,7 @@ body{
   z-index: 2;
 }
 .middle{
-  height: 1670px;
-  /*height: 200vw;*/
+  height: 1622px;
   background-image: url(../img/background2.png);
   top: -5px;
   z-index: 1;
@@ -71,13 +88,28 @@ body{
   position: absolute;
   left: 20%;
   width: 60%;
-  height: 2440px;
+  height: 2394px;
   z-index: 3;
-  animation: fadeIn 1s;
-
- /* background-color: #3c3c3c6b;*/
 }
-/*-------------------------------------*/
+@media (max-width: 1650px) {
+  #page{
+    left: 15%;
+    width: 70%;
+  }
+}
+@media (max-width: 1410px) {
+  #page{
+    left: 10%;
+    width: 80%;
+  }
+}
+@media (max-width: 1230px) {
+  #page{
+    left: 2.5%;
+    width: 95%;
+  }
+}
+/*===================================================================================*/
 .menu{
   width: 32px;
 }
@@ -125,10 +157,10 @@ body{
 }
 .basket-lang-search{
   height: 100%;
-  width: 50%;
   display: inline-flex;
   justify-content: flex-end;
   align-items: center;
+  font-family: HelveticaLight;
 }
 .menu-basket{
   display:flex;
@@ -162,6 +194,7 @@ body{
   height: 30px;
   width: 30px;
   margin-right: 5px;
+  font-size: 16px;
 }
 .basket-lang-search .activelang{
   color: white;
@@ -178,7 +211,6 @@ body{
   padding-left: 5px;
   background-color: #894041;
   box-shadow: inset 0 0 10px #00000096;
-  /*box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.5),inset 0px 2px 5px 0px rgba(0, 0, 0, 0.004);*/
 }
 .basket-lang-search form input::-webkit-input-placeholder {
   font-size: 16px;
@@ -198,7 +230,7 @@ body{
   background-color: #ff000000;
   color: black;
 }
-/*-------------------------------------*/
+/*===================================================================================*/
 .header-block{
   display: flex;
   flex-direction: row;
@@ -206,22 +238,19 @@ body{
   width: 100%;
   height: 135px;
   margin-top: 35px;
- /* background-color: #00008047;*/
 }
-/*-------------------------------------*/
-.workbackground{
-  /*background-color: tomato;*/
-}
-/*-------------------------------------*/
 .registration-block{
   height: 100%;
   width: 200px;
 }
-.registration-block p {
+.registration-block p{
   margin-top: 0;
   margin-bottom: 2px;
   color: white;
+}
+.registration p {
   cursor: pointer;
+  font-family: HelveticaLight;
 }
 .registration-block span {
   font-size: 13px;
@@ -253,8 +282,23 @@ body{
   background-image: -webkit-linear-gradient( 90deg, rgb(176,39,39) 0%, rgb(222,54,53) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(176,39,39) 0%, rgb(222,54,53) 100%);
   box-shadow: 0px 2px 5px 0px rgba(1, 1, 1, 0.5),inset 0px 1px 1px 0px rgba(255, 255, 255, 0.29);
+  cursor: pointer;
 }
-/*-------------------------------------*/
+.b-header{
+  font-family: HelveticaBold;
+  font-size: 20px;
+  text-shadow: 0px 1px 1px rgba(1, 1, 1, 0.5);
+}
+.b-item {
+  font-size: 12px;
+  font-family: HelveticaLight;
+}
+.basket span{
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
 .logo-block{
   height: 100%;
   width: 200px;
@@ -264,30 +308,30 @@ body{
   margin: 0 auto;
 }
 .logo-block h1 {
-  /*font-size: 48px;*/
-  font-family: "HelveticaNeue";
-  color: rgb(96, 139, 48);
+  font-size: 48px;
+  font-family: HelveticaMedium;
+  color: rgba(96, 139, 48, 0.93);
+  background: linear-gradient(to right,#00000017 ,#000000 );
   margin-top: 5px;
-  font-size: 43px;
   text-align: center;
-  color: #0000002b;
   text-shadow: 0px 1px 1px rgba(255,255,255,0.5);
   -webkit-background-clip: text;
 }
-/*-------------------------------------*/
 .phone-block{
   height: 100%;
   width: 200px;
 }
-.phone-block p {
+.phone-block p, .phone-block span {
   text-align: center;
   margin: 0;
   color: white;
-  font-size: 19px;
+  font-size: 17px;
+  text-shadow: 0px 1px 1px rgba(1, 1, 1, 0.5);
+  font-family: "HelveticaLight";
 }
-.phone-block p span {
-  font-weight: bold;
-  font-size: 25px;
+.phone-block span {
+  font-family: "HelveticaMedium";
+  font-size: 22px;
 }
 .phone-block div{
   border-radius: 3px;
@@ -298,12 +342,12 @@ body{
   background-image: -webkit-linear-gradient( 90deg, rgb(176,39,39) 0%, rgb(222,54,53) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(176,39,39) 0%, rgb(222,54,53) 100%);
   box-shadow: 0px 2px 5px 0px rgba(1, 1, 1, 0.5),inset 0px 1px 1px 0px rgba(255, 255, 255, 0.29);
+  cursor: pointer;
 }
 .phone-block div p {
   font-weight: bold;
-  font-size: 30px;
-
-  font-family: "HelveticaNeue";
+  font-size: 34px;
+  font-family: "HelveticaBold";
   color: rgb(255, 255, 255);
   text-shadow: 0px 1px 1px rgba(1, 1, 1, 0.5);
 }
@@ -312,9 +356,10 @@ body{
   color: white;
   text-align: center;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 24px;
+  font-family: "HelveticaBold";
 }
-/*-------------------------------------*/
+/*===================================================================================*/
 .doors-block{
   width: 100%;
   height: 365px;
@@ -322,7 +367,6 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-/*  background-color: #00008047;*/
 }
 .doors-block div {
   display: flex;
@@ -331,15 +375,19 @@ body{
 }
 .doors-block div span{
   text-align: center;
-  color: rgba(93,131,45,0.9);
-  text-shadow: 2px 2px 3px rgba(255,255,255,0.9);
+  font-family: BebasBold;
+  color: rgb(96, 139, 48);
+  text-shadow: 0px 1px 1px rgba(255,255,255,0.75);
+  background-image: linear-gradient(to top,#00000017 ,#000000 ), linear-gradient(to bottom,#00000017 ,#000000 );
+  -webkit-background-clip: text;
 }
 .door {
-  font-size: 40px;
+  font-size: 62px;
 }
 .doorinfo {
-  font-size: 14px;
+  font-size: 22px;
 }
+/*===================================================================================*/
 .slider-block{
   width: 100%;
   height: 345px;
@@ -360,42 +408,19 @@ body{
   color: white;
   text-shadow: 1px 1px 3px black;
   margin-top: 11%;
+  font-family: HelveticaMediumItalic;
 }
+/*===================================================================================*/
 h2{
   text-align: center;
   font-size: 48px;
   margin-top: 110px;
   margin-bottom: 50px;
-
-  background-color: #56772b;
-  color: #7190479e;
-  text-shadow: 0px 1px 1px rgba(255,255,255,0.5);
+  font-family: BebasBold;
+  color: rgb(96, 139, 48);
+  text-shadow: 0px 1px 1px rgba(255,255,255,0.75);
+  background-image: linear-gradient(to top,#00000017 ,#000000 ), linear-gradient(to bottom,#00000017 ,#000000 );
   -webkit-background-clip: text;
-}
-.menu-block{
-  font-size: 12px;
-  font-family: "HelveticaNeue";
-  color: rgb(0, 102, 0);
-  text-transform: uppercase;
-  line-height: 2;
-  text-align: left;
-  width: 150px;
-}
-.menu-block ul {
-  margin: 0;
-  margin-right: 10px;
-  padding-left: 5px;
-}
-/*.menu-block li {
-  list-style-type: none;
-}*/
-.menu-block li:hover{
-  cursor: pointer;
-  transition: .2s;
-  opacity: .7;
-}
-.menu-block .active{
-  color: #d94343;
 }
 .content-block{
   display: flex;
@@ -403,7 +428,25 @@ h2{
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  /*background-color: #ffd7007a;*/
+}
+.menu-block{
+  font-size: 15px;
+  font-family: HelveticaRegular;
+  color: rgb(0, 102, 0);
+  line-height: 2;
+  margin-right: 10px;
+}
+.menu-block ul {
+  margin: 0;
+  padding-left: 5px;
+}
+.menu-block li:hover{
+  cursor: pointer;
+  transition: .2s;
+  opacity: .7;
+}
+.menu-block .active{
+  color: #d94343;
 }
 .content-sheet{
   width: 60%;
@@ -413,7 +456,7 @@ h2{
 }
 .content-sheet p {
   font-size: 18px;
-  font-family: "HelveticaNeue";
+  font-family: HelveticaLight;
   text-align: justify;
   color: rgb(51, 51, 51);
   margin-top: 32px;
@@ -421,10 +464,20 @@ h2{
   margin-right: 20px;
   text-indent: 20px;
 }
-.advertising{
+@media (max-width: 1030px) {
+  .content-sheet p {
+    font-size: 16px;
+    
+  }
+  .menu-block{
+    font-size: 12px;
+  }
+}
+.box{
+  width: 150px;
   margin-left: 10px;
 }
-.advertising .phone{
+.phone{
   height: 100%;
   width: 150px;
 }
@@ -436,13 +489,15 @@ h2{
 .phone p{
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: HelveticaLight;
 }
 .phone span{
   display: block;
   margin: 0 auto;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+  font-family: HelveticaMedium;
 }
 .phone div {
   border-radius: 2px;
@@ -462,10 +517,11 @@ h2{
 .phone div p,.phone div span{
   text-align: center;
   color: white;
+  font-family: HelveticaBold;
 }
 .phone div p{
   margin: 0;
-  font-size: 30px;
+  font-size: 28px;
 }
 .phone div span{
   display: block;
@@ -494,31 +550,32 @@ h2{
 }
 .banner p{
   text-align: center;
-  font-size: 25px;
-  font-family: "BebasNeueBold";
+  font-size: 35px;
+  font-family: "BebasBold";
+  line-height: .9;
   color: rgb(255, 255, 255);
   text-shadow: 0px 1px 2px rgba(16, 16, 15, 0.5);
-  bottom: 130px;
   position: relative;
+  bottom: 131px;
 }
 .banner p span{
-  font-size: 30px;
+  font-size: 40px;
 }
 /*------------------------------------------------------------------------------------------footer*/
 footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 45px;
-    position: absolute;
-    bottom: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  position: absolute;
+  bottom: 1px;
+  font-family: "HelveticaRegular";
 }
 footer p{
   font-size: 18px;
   margin: 0;
-  font-family: "HelveticaNeue";
   color: rgba(255, 255, 255, 0.54);
   line-height: 0.95;
 }
@@ -531,7 +588,6 @@ footer div{
 footer div p{
   margin-left: 25px;
   font-size: 18px;
-  font-family: "HelveticaNeue";
   color: rgb(255, 255, 255);
   line-height: 0.95;
   text-align: right;
