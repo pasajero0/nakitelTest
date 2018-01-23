@@ -1,3 +1,12 @@
+document.body.onload = function(){
+ 	setTimeout(function(){
+ 		var preloader = document.getElementById('pagePreloader');
+ 		if (!preloader.classList.contains('.done')){
+ 			$('#pagePreloader').addClass("done");
+ 			console.log('done!');
+ 		}
+ 	}, 400)};
+
 $('.slider').slick({
 	slidesToShow: 1,
 	slidesToScroll: 1,
