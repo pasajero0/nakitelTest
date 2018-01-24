@@ -1,9 +1,7 @@
 document.body.onload = function(){
  	setTimeout(function(){
- 		var preloader = document.getElementById('pagePreloader');
- 		if (!preloader.classList.contains('.done')){
- 			$('#pagePreloader').addClass("done");
- 			console.log('done!');
+ 		if (!$('.preloader').hasClass('done')){
+ 			$('.preloader').addClass('done');
  		}
  	}, 300)};
 
