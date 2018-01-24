@@ -5,7 +5,7 @@ document.body.onload = function(){
  			$('#pagePreloader').addClass("done");
  			console.log('done!');
  		}
- 	}, 400)};
+ 	}, 300)};
 
 $('.slider').slick({
 	slidesToShow: 1,

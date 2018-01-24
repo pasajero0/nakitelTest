@@ -24,20 +24,13 @@
   src: url("../font/BebasNeue Bold.otf");
 }
 /*------------------------------------------------------------------------------------------animation*/
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@keyframes pulse {
+  from, 50%, to {
+    transform: scale(1);
   }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+
+  25%, 75% {
+    transform: scale(1.3);
   }
 }
 /*------------------------------------------------------------------------------------------background*/
@@ -56,11 +49,12 @@ body{
 .background{
   position: relative;
   width: 100%;
-  animation: fadeIn 1s;
 }
 .top{
   height: 467px;
   background-image: url(../img/background1.png);
+  background-position: center;
+  background-size: cover;
   box-shadow: inset 0px 5px 15px -5px black;
   z-index: 2;
 }
@@ -73,6 +67,8 @@ body{
 .bottom{
   height: 317px;
   background-image: url(../img/background3.png);
+  background-position: center;
+  background-size: cover;
   top: -10px;
   z-index: 2;
 }
@@ -104,12 +100,10 @@ body{
   visibility: visible;
 }
 .loader{
-  width: 50px;
-    height: 50px;
-    border: 5px solid rgb(217, 217, 217);
-    border-top-color: rgb(219, 53, 52);
-    border-radius: 50%;
-    animation: spin .3s infinite linear;
+  width: 95px;
+  height: 94px;
+  background-image: url(../img/logo.png);
+  animation: pulse 1s infinite linear;
 }
 .done{ 
   opacity: 0;
@@ -166,7 +160,7 @@ body{
   margin-top: 7px;
   width: 200px;
   height: 220px;
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(0, 0, 0, .85);
   color: white;
 }
 .dropmenu ul {
@@ -205,6 +199,7 @@ body{
 }
 .menu-basket img {
   height: 35px;
+  margin-right: 5px;
 }
 .menu-basket div{
   font-size: 12px;
@@ -228,16 +223,16 @@ body{
   width: 30px;
   margin-right: 5px;
   font-size: 16px;
-  text-align: center;
+  padding: 0;
 }
 .basket-lang-search .activelang{
   color: white;
 }
-.basket-lang-search form{
+form{
   width: 270px;
   height: 30px;
 }
-.basket-lang-search form input{
+input{
   width: 270px;
   height: 30px;
   border: 1px;
@@ -245,15 +240,18 @@ body{
   padding-left: 5px;
   background-color: #894041;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
 }
-.basket-lang-search form input::-webkit-input-placeholder {
-  font-size: 16px;
+input::-webkit-input-placeholder {
   color: #db3534;
 }
-.basket-lang-search form button{
+input::-ms-clear {
+    display: none;
+}
+form button{
   position: absolute;
-  right: 5px;
-  top: 13px;
+  right: 0px;
+  top: 14px;
   border-style: none;
   height: 20px;
   width: 25px;
@@ -270,7 +268,7 @@ body{
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 135px;
+  height: 150px;
   margin-top: 35px;
 }
 .registration-block{
@@ -282,11 +280,14 @@ body{
   margin-bottom: 2px;
   color: white;
 }
-.registration p {
+.registration{
+  margin-bottom: 5px;
+}
+.registration > p {
   cursor: pointer;
   font-family: HelveticaLight;
 }
-.registration-block span {
+.registration > p span {
   font-size: 13px;
   text-decoration: underline;
 }
@@ -327,7 +328,7 @@ body{
   font-size: 12px;
   font-family: HelveticaLight;
 }
-.basket span{
+.b-item span{
   display: inline-block;
   color: white;
   font-weight: bold;
@@ -341,15 +342,8 @@ body{
   display: block;
   margin: 0 auto;
 }
-.logo-block h1 {
-  font-size: 48px;
-  font-family: HelveticaMedium;
-  color: rgba(96, 139, 48, 0.93);
-  background: linear-gradient(to right,#00000017 ,#000000 );
-  margin-top: 5px;
-  text-align: center;
-  text-shadow: 0px 1px 1px rgba(255,255,255,0.5);
-  -webkit-background-clip: text;
+.logo-block img+img{
+  margin-top: 20px;
 }
 .phone-block{
   height: 100%;
@@ -359,15 +353,21 @@ body{
   text-align: center;
   margin: 0;
   color: white;
-  font-size: 17px;
+  font-size: 18px;
   text-shadow: 0px 1px 1px rgba(1, 1, 1, 0.5);
   font-family: "HelveticaLight";
 }
-.phone-block span {
+.phone-block>span {
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 4px;
   font-family: "HelveticaMedium";
-  font-size: 22px;
+  font-size: 23px;
 }
 .phone-block div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 3px;
   width: 100%;
   height: 67px;
@@ -379,7 +379,7 @@ body{
   cursor: pointer;
 }
 .phone-block div p {
-  font-weight: bold;
+  margin: auto;
   font-size: 34px;
   font-family: "HelveticaBold";
   color: rgb(255, 255, 255);
@@ -389,7 +389,6 @@ body{
   display: block;
   color: white;
   text-align: center;
-  font-weight: normal;
   font-size: 24px;
   font-family: "HelveticaBold";
 }
@@ -401,6 +400,10 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.doors-block img {
+  width: 140px;
+  height: 283px;
 }
 .doors-block div {
   display: flex;
@@ -464,7 +467,8 @@ h2{
   width: 100%;
 }
 .menu-block{
-  font-size: 15px;
+  font-size: 13px;
+  width: 150px;
   font-family: HelveticaRegular;
   color: rgb(0, 102, 0);
   line-height: 2;
@@ -500,11 +504,15 @@ h2{
 }
 @media (max-width: 1030px) {
   .content-sheet p {
-    font-size: 16px;
-    
+    font-size: 16px; 
   }
   .menu-block{
     font-size: 12px;
+  }
+}
+@media (max-width: 930px) {
+  .content-sheet p {
+    font-size: 14px;
   }
 }
 .box{
@@ -521,7 +529,7 @@ h2{
   color: black;
 } 
 .phone p{
-  margin-top: 5px;
+  margin-top: 0;
   margin-bottom: 5px;
   font-size: 13px;
   font-family: HelveticaLight;
@@ -534,6 +542,9 @@ h2{
   font-family: HelveticaMedium;
 }
 .phone div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 2px;
   width: 100%;
   height: 60px;
@@ -545,8 +556,6 @@ h2{
 }
 .phone div:hover{
   cursor: pointer;
-  opacity: .8;
-  transition: .3s;
 }
 .phone div p,.phone div span{
   text-align: center;
