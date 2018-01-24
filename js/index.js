@@ -1,7 +1,7 @@
 document.body.onload = function(){
  	setTimeout(function(){
- 		if (!$('.preloader').hasClass('done')){
- 			$('.preloader').addClass('done');
+ 		if (!$('#pagePreloader').hasClass('done')){
+ 			$('#pagePreloader').addClass('done');
  		}
  	}, 300)};
 
@@ -9,6 +9,6 @@ $('.slider').slick({
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	autoplay: true,
-	autoplaySpeed: 3000,
+	autoplaySpeed: 1000,
 	dots: true
 });
